@@ -1,0 +1,10 @@
+/* styles.css or a similar CSS file */
+.custom-marker-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px; /* Adjust width as needed */
+    height: 28px; /* Adjust height as needed */
+    background: transparent; /* Ensure background is transparent */
+  }
+  
