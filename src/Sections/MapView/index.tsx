@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { MapContainer, Polyline, TileLayer } from "react-leaflet";
 import CustomMapMarker from "./custom-map-marker";
 import { useLocationContext } from "../../context/LocationContext";
+import VectorTileLayer from "react-leaflet-vector-tile-layer";
 
 interface MapViewProps {
   className?: string;
@@ -45,10 +46,8 @@ const MapView: React.FC<MapViewProps> = ({ className }) => {
         zoom={10}
         className="h-full w-full"
       >
-        <TileLayer
-          url="/tiles/{z}-{x}-{y}.png"
-          attribution="&copy; OpenStreetMap contributors"
-        />
+        <VectorTileLayer styleUrl="http://localhost:8080/styles/basic-preview/style.json" />
+
         {markers}
         {locations && locations.length > 1 && (
           <Polyline
